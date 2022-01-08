@@ -5,9 +5,9 @@ function searchWeather(event){
     const erroMsg = document.querySelector('#error');
     const forecast = document.querySelector('#forecast');
     const locationFromAPI = document.querySelector('#location');
+    forecast.textContent = 'Loading...'
     fetch(`/weather?address=${getLocation}`).then((res)=>{
     res.json().then((data)=>{
-        forecast.textContent = 'Loading...'
         erroMsg.textContent = ''; 
        if(data.error){
             erroMsg.textContent = data.error;
