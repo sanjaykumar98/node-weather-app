@@ -100,11 +100,6 @@ app.get('*',(req,res)=>{
 })
 
 
-// app.get('',(req,res)=>{
-//     res.send('<h1>Weather</h1>');
-// });
-
-
 
 
 
