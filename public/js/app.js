@@ -12,7 +12,7 @@ function searchWeather(event){
        if(data.error){
             erroMsg.textContent = data.error;
             forecast.textContent = '';  
-            locationFromAPI.textContent = ''; 
+            locationFromAPI.textContent = '';  
        }else{        
         // getLocation.textContent = '';
         forecast.innerHTML = `<h5>Weather updates at ${data.location}</h5>
