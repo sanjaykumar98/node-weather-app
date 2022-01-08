@@ -69,11 +69,16 @@ app.get('/weather',(req,res)=>{
                 error:error
               });
             }
-            const forecast = `Its ${response.current.weather_descriptions[0]} and temperature is ${response.current.temperature} degrees`;
+            const forecast = ` ${response.current.temperature} degrees but feels like ${response.current.feelslike} degrees`;
             res.send({ 
                 forecast,
                 location,
-                address:req.query.address
+                city:response.request['query'],
+                address:req.query.address,
+                wind_speed:response.current.wind_speed,
+                humidity:response.current.humidity,
+                uv_index:response.current.uv_index,
+                localtime:response.location.localtime
             }); 
             // console.log(location);
             // console.log(`Its ${response.current.weather_descriptions[0]} and temperature is ${response.current.temperature} degrees`)

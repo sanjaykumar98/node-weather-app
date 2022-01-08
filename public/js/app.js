@@ -14,9 +14,15 @@ function searchWeather(event){
             forecast.textContent = '';  
             locationFromAPI.textContent = ''; 
        }else{        
-        getLocation.textContent = '';
-        forecast.textContent = data.forecast;  
-        locationFromAPI.textContent = data.location; 
+        // getLocation.textContent = '';
+        forecast.innerHTML = `<h5>Weather updates at ${data.location}</h5>
+                              <p>Temperature : ${data.forecast}</p>
+                              <p>Wind speed : ${data.wind_speed}</p>
+                              <p>Humidity : ${data.humidity}</p>
+                              <p>UV index : ${data.uv_index}</p>
+                              <p>Localtime : ${data.localtime}</p>
+                              `;  
+        // locationFromAPI.textContent = data.location; 
         erroMsg.textContent = ''; 
        }
     });
